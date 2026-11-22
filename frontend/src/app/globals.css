@@ -6,10 +6,12 @@ html {
   height: 100%;
 }
 
+/* "clip" stops sideways scrolling without turning body into a scroll box,
+   so the sticky sidebar keeps working. */
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
