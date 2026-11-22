@@ -1,0 +1,292 @@
+/* =====================================================================
+   Cura AI theme: Navy, Cream, Coral
+   Every colour in the app should come from the variables below.
+   ===================================================================== */
+:root {
+  /* --- Core palette --- */
+  --navy: #14213d;
+  --navy-deep: #0c1529;
+  --navy-soft: #2a3a5f;
+  --sidebar: #293b59; /* softer navy, used only by the sidebar */
+  --cream: #f4ede0;
+  --cream-soft: #faf6ee;
+  --cream-deep: #e9dfcc;
+  --coral: #ff6b5b;
+  --coral-hover: #f25545;
+  --coral-ink: #b93a2b; /* dark coral for small TEXT on cream */
+  --coral-wash: #ffe6e1;
+
+  /* --- Semantic tokens --- */
+  --background: var(--cream);
+  --foreground: var(--navy);
+  --surface: #ffffff;
+  --surface-soft: var(--cream-soft);
+  --surface-muted: var(--cream-deep);
+  --text-muted: #4b5670;
+  --text-soft: #6b7388;
+  --danger: #b3261e;
+
+  --border: rgba(20, 33, 61, 0.1);
+  --border-strong: rgba(20, 33, 61, 0.22);
+  --shadow-soft: 0 1px 3px rgba(20, 33, 61, 0.05), 0 6px 16px rgba(20, 33, 61, 0.04);
+  --shadow-float: 0 24px 60px rgba(20, 33, 61, 0.16);
+  --shadow-coral: 0 0.6rem 1.3rem rgba(255, 107, 91, 0.32);
+  --focus-ring: 0 0 0 3px rgba(255, 107, 91, 0.35);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Old names kept so nothing breaks */
+  --primary: var(--navy);
+  --primary-dark: var(--navy-deep);
+  --primary-bright: var(--navy-soft);
+  --secondary: var(--coral-ink);
+  --crimson: var(--coral-ink);
+  --rose: var(--coral-wash);
+
+  --glass-bg: rgba(250, 246, 238, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.7);
+
+  --font-sans: var(--font-manrope), Manrope, Inter, ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(255, 107, 91, 0.3);
+}
+
+/* =====================================================================
+   Animated fog + ribbed-glass background
+   Markup (already in your pages):
+     <div class="appBackdrop" aria-hidden="true"> <span/> x5 </div>
+   - The 5 <span>s are the fog clouds (span 1 = the big coral glow).
+   - ::before is one extra slow coral glow.
+   - ::after is the fine vertical rib texture on top of the fog.
+   Add the class "appBackdropDark" for the deep navy version (login page).
+   Only transform is animated (cheap for the GPU), no blur filters.
+   ===================================================================== */
+
+/* Light version (dashboard): cream base, very soft fog and ribs */
+.appBackdrop {
+  --fog-base: linear-gradient(165deg, #faf6ee 0%, #f4ede0 55%, #ede3d0 100%);
+  --fog-coral: rgba(255, 107, 91, 0.24);
+  --fog-navy: rgba(20, 33, 61, 0.12);
+  --fog-muted: rgba(41, 59, 89, 0.13);
+  --rib-a: rgba(20, 33, 61, 0.05);
+  --rib-b: rgba(20, 33, 61, 0);
+
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--fog-base);
+}
+
+/* Dark version (login page): deep navy, one big coral glow */
+.appBackdropDark {
+  --fog-base: linear-gradient(160deg, #0c1529 0%, #14213d 50%, #1a2a47 100%);
+  --fog-coral: rgba(255, 107, 91, 0.62);
+  --fog-navy: rgba(6, 11, 26, 0.8);
+  --fog-muted: rgba(41, 59, 89, 0.9);
+  --rib-a: rgba(244, 237, 224, 0.075);
+  --rib-b: rgba(5, 10, 24, 0.28);
+}
+
+/* Second slow coral glow, lower right */
+.appBackdrop::before {
+  content: "";
+  position: absolute;
+  width: 40vmax;
+  height: 40vmax;
+  left: 52%;
+  top: 38%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--fog-coral) 0%, transparent 66%);
+  opacity: 0.6;
+  animation: fogF 58s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* The five fog clouds */
+.appBackdrop span {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* 1) The big central coral glow */
+.appBackdrop span:nth-child(1) {
+  width: 64vmax;
+  height: 52vmax;
+  top: 20%;
+  left: 8%;
+  background: radial-gradient(circle, var(--fog-coral) 0%, transparent 68%);
+  animation: fogA 46s ease-in-out infinite alternate;
+}
+
+/* 2) Muted navy, bottom left */
+.appBackdrop span:nth-child(2) {
+  width: 72vmax;
+  height: 54vmax;
+  bottom: -26vmax;
+  left: -20vmax;
+  background: radial-gradient(circle, var(--fog-muted) 0%, transparent 70%);
+  animation: fogB 54s ease-in-out infinite alternate;
+}
+
+/* 3) Warm coral accent inside the glow */
+.appBackdrop span:nth-child(3) {
+  width: 34vmax;
+  height: 28vmax;
+  top: 36%;
+  left: 36%;
+  background: radial-gradient(circle, var(--fog-coral) 0%, transparent 66%);
+  opacity: 0.75;
+  animation: fogC 47s ease-in-out infinite alternate;
+}
+
+/* 4) Deep navy, top right (darkens the edges) */
+.appBackdrop span:nth-child(4) {
+  width: 56vmax;
+  height: 46vmax;
+  top: -18vmax;
+  right: -14vmax;
+  background: radial-gradient(circle, var(--fog-navy) 0%, transparent 70%);
+  animation: fogD 63s ease-in-out infinite alternate;
+}
+
+/* 5) Muted navy, top centre */
+.appBackdrop span:nth-child(5) {
+  width: 44vmax;
+  height: 36vmax;
+  top: -14vmax;
+  left: 22%;
+  background: radial-gradient(circle, var(--fog-muted) 0%, transparent 68%);
+  animation: fogE 71s ease-in-out infinite alternate;
+}
+
+/* Fine vertical ribs (reeded glass), like the reference */
+.appBackdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--rib-a) 0,
+    var(--rib-a) 1px,
+    var(--rib-b) 1px,
+    var(--rib-b) 5px
+  );
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 70%, transparent 100%);
+}
+
+/* To get a full grid (horizontal lines too) instead of ribs, add this
+   second layer inside background-image above:
+     , repeating-linear-gradient(0deg, var(--rib-a) 0, var(--rib-a) 1px, transparent 1px, transparent 56px)
+*/
+
+@keyframes fogA {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(10%, -8%, 0) scale(1.1); }
+  100% { transform: translate3d(22%, 6%, 0) scale(0.95); }
+}
+
+@keyframes fogB {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(14%, -10%, 0) scale(1.1); }
+  100% { transform: translate3d(26%, -4%, 0) scale(0.94); }
+}
+
+@keyframes fogC {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-22%, -14%, 0) scale(1.15); }
+  100% { transform: translate3d(14%, 10%, 0) scale(0.92); }
+}
+
+@keyframes fogD {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-14%, 14%, 0) scale(1.08); }
+  100% { transform: translate3d(8%, 20%, 0) scale(1.14); }
+}
+
+@keyframes fogE {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-18%, 20%, 0) scale(1.1); }
+  100% { transform: translate3d(14%, 12%, 0) scale(0.95); }
+}
+
+@keyframes fogF {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-30%, -20%, 0) scale(1.2); }
+}
+
+.stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
+/* Phones: fewer clouds, less GPU work */
+@media (max-width: 760px) {
+  .appBackdrop span:nth-child(4),
+  .appBackdrop span:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appBackdrop::before,
+  .appBackdrop span {
+    animation: none;
+  }
+}
+
+/* ---------- Click ripple: small, soft, short ----------
+   Coral on light surfaces, cream on dark ones (sidebar). */
+.glassRipple {
+  position: fixed;
+  z-index: 3000;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid rgba(255, 107, 91, 0.45);
+  background: radial-gradient(circle, rgba(255, 107, 91, 0.22), rgba(255, 107, 91, 0.06) 60%, transparent 72%);
+  opacity: 0;
+  animation: glassRippleOut 420ms cubic-bezier(0.2, 0.6, 0.3, 1) both;
+}
+
+.glassRippleLight {
+  border-color: rgba(244, 237, 224, 0.5);
+  background: radial-gradient(circle, rgba(244, 237, 224, 0.26), rgba(244, 237, 224, 0.06) 60%, transparent 72%);
+}
+
+@keyframes glassRippleOut {
+  from { transform: scale(0.4); opacity: 0.55; }
+  to { transform: scale(3.2); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glassRipple { display: none; }
+}

@@ -1,0 +1,332 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  color: var(--navy);
+  cursor: pointer;
+  touch-action: manipulation;
+  appearance: none;
+  -webkit-appearance: none;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 107, 91, 0.2), transparent 28rem),
+    radial-gradient(circle at 18% 18%, rgba(255, 107, 91, 0.14), transparent 18rem),
+    radial-gradient(circle at 84% 16%, rgba(20, 33, 61, 0.14), transparent 16rem),
+    linear-gradient(180deg, #faf6ee 0%, #f4ede0 100%);
+}
+
+.overlay:disabled {
+  color: var(--navy);
+  opacity: 1;
+}
+
+.overlay:focus-visible {
+  outline: 3px solid rgba(255, 107, 91, 0.8);
+  outline-offset: -0.75rem;
+}
+
+.glow,
+.glowInner {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  border-radius: 999px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.glow {
+  width: min(38rem, 86vw);
+  height: min(38rem, 86vw);
+  background: rgba(255, 107, 91, 0.18);
+  filter: blur(54px);
+  animation: floatMist 7s ease-in-out infinite alternate;
+}
+
+.glowInner {
+  width: min(20rem, 58vw);
+  height: min(20rem, 58vw);
+  background: rgba(255, 107, 91, 0.16);
+  filter: blur(32px);
+}
+
+.droplets {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.droplets span {
+  position: absolute;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.98), transparent 32%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.55), rgba(255, 107, 91, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    inset 0 0.5rem 0.9rem rgba(255, 255, 255, 0.62),
+    0 1rem 2.4rem rgba(20, 33, 61, 0.12);
+  animation: ambientDrop 8s ease-in-out infinite;
+}
+
+.droplets span:nth-child(1) {
+  width: 5.6rem;
+  height: 5.6rem;
+  top: 12%;
+  right: 13%;
+}
+
+.droplets span:nth-child(2) {
+  width: 3.2rem;
+  height: 3.2rem;
+  left: 12%;
+  bottom: 18%;
+  animation-delay: -2.4s;
+}
+
+.droplets span:nth-child(3) {
+  width: 2.1rem;
+  height: 2.1rem;
+  right: 22%;
+  bottom: 28%;
+  animation-delay: -4s;
+}
+
+.droplets span:nth-child(4) {
+  width: 1.5rem;
+  height: 1.5rem;
+  left: 22%;
+  top: 22%;
+  animation-delay: -1.2s;
+}
+
+.droplets span:nth-child(5) {
+  width: 4.1rem;
+  height: 4.1rem;
+  left: 8%;
+  top: 48%;
+  animation-delay: -5.5s;
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 1.35rem;
+  width: min(28rem, 90vw);
+  padding: 1.5rem;
+  pointer-events: none;
+}
+
+.logoWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(18rem, 72vw);
+  aspect-ratio: 1;
+  border-radius: 3rem;
+  background: #ffffff;
+  box-shadow:
+    0 1.5rem 4rem rgba(20, 33, 61, 0.2),
+    inset 0 0 0 1px rgba(20, 33, 61, 0.06);
+  animation: logoFloat 3.6s ease-in-out infinite;
+}
+
+.logo {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+}
+
+.mask {
+  position: absolute;
+  top: 27%;
+  left: 58%;
+  width: 8.1rem;
+  height: 4rem;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  border-radius: 1.15rem 1.15rem 1.35rem 1.35rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 237, 224, 0.96)),
+    #ffffff;
+  border: 1px solid rgba(20, 33, 61, 0.14);
+  box-shadow:
+    0 0.8rem 1.8rem rgba(20, 33, 61, 0.14),
+    inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.9);
+  animation: maskHover 2.4s ease-in-out infinite;
+}
+
+.mask::before,
+.mask::after {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 2px solid rgba(20, 33, 61, 0.2);
+  border-left: 0;
+  border-bottom: 0;
+  border-radius: 999px;
+}
+
+.mask::before {
+  left: -1.35rem;
+  transform: rotate(214deg);
+}
+
+.mask::after {
+  right: -1.35rem;
+  transform: rotate(34deg);
+}
+
+.maskBand,
+.maskFold {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background: rgba(20, 33, 61, 0.16);
+}
+
+.maskBand {
+  top: 0.9rem;
+}
+
+.maskFold:nth-child(2) {
+  top: 1.85rem;
+}
+
+.maskFold:nth-child(3) {
+  top: 2.7rem;
+}
+
+.hint {
+  display: inline-flex;
+  min-height: 3rem;
+  min-width: 12.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  border: 1px solid rgba(20, 33, 61, 0.14);
+  border-radius: 999px;
+  background: var(--navy);
+  box-shadow: 0 0.75rem 2rem rgba(20, 33, 61, 0.25);
+  color: var(--cream);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.activated {
+  pointer-events: none;
+  animation: overlayExit 2.5s cubic-bezier(0.68, 0, 0.2, 1) forwards;
+}
+
+.activated .logoWrap {
+  animation: logoSettle 2.5s cubic-bezier(0.68, 0, 0.2, 1) forwards;
+}
+
+.activated .mask {
+  animation: maskFall 1.45s cubic-bezier(0.16, 0.72, 0.28, 1) forwards;
+}
+
+.activated .hint {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+@keyframes logoFloat {
+  50% {
+    transform: translateY(-0.45rem) scale(1.02);
+  }
+}
+
+@keyframes maskHover {
+  50% {
+    transform: translate(-50%, calc(-50% - 0.4rem)) rotate(-5deg);
+  }
+}
+
+@keyframes maskFall {
+  0% {
+    transform: translate(-50%, -50%) rotate(-8deg);
+    opacity: 1;
+  }
+  66% {
+    transform: translate(-30%, 140%) rotate(18deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-18%, 240%) rotate(34deg);
+    opacity: 0;
+  }
+}
+
+@keyframes logoSettle {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  56% {
+    transform: translateY(0) scale(1.08);
+  }
+  100% {
+    transform: translateY(-39vh) scale(0.22);
+    opacity: 0;
+  }
+}
+
+@keyframes overlayExit {
+  0%,
+  72% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes floatMist {
+  to {
+    transform: translate(-42%, -58%) scale(1.08);
+  }
+}
+
+@keyframes ambientDrop {
+  50% {
+    transform: translate3d(0, -0.85rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .logoWrap,
+  .mask,
+  .droplets span {
+    animation: none;
+  }
+
+  .activated {
+    animation: overlayExit 420ms ease forwards;
+  }
+
+  .activated .logoWrap {
+    animation: none;
+  }
+
+  .activated .mask {
+    opacity: 0;
+  }
+}

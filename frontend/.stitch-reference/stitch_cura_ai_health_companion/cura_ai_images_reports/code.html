@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#ffb2ba", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "surface-variant": "#e4e1e5", "surface-container-low": "#f5f3f6", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#7d2939", "on-error-container": "#93000a", "tertiary-container": "#5c002a", "on-secondary": "#ffffff", "background": "#fbf8fc", "error-container": "#ffdad6", "primary-fixed": "#ffd9dc", "on-tertiary-fixed-variant": "#861a45", "on-error": "#ffffff", "on-secondary-fixed": "#40000c", "inverse-surface": "#303033", "secondary-container": "#ff6473", "surface-tint": "#9b4050", "outline": "#877273", "primary-container": "#580c1f", "surface-bright": "#fbf8fc", "on-tertiary-fixed": "#3f001a", "on-secondary-container": "#680019", "secondary-fixed-dim": "#ffb3b5", "secondary-fixed": "#ffdada", "outline-variant": "#dac0c2", "on-background": "#1b1b1e", "surface-container-highest": "#e4e1e5", "secondary": "#b02a3e", "tertiary-fixed-dim": "#ffb1c5", "surface-container-high": "#eae7eb", "primary": "#37000e", "on-primary-fixed": "#400011", "on-surface-variant": "#554244", "on-primary-container": "#db7382", "surface-dim": "#dcd9dd", "inverse-primary": "#ffb2ba", "tertiary": "#360016", "surface": "#fbf8fc", "surface-container": "#f0edf1", "inverse-on-surface": "#f3f0f4", "error": "#ba1a1a", "on-secondary-fixed-variant": "#8f0c28", "on-surface": "#1b1b1e", "tertiary-fixed": "#ffd9e1", "on-tertiary-container": "#e76891" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin": "2rem", "space-md": "1rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "gutter": "1.5rem" }, "fontFamily": { "body-sm": [ "Manrope" ], "headline-sm": [ "Manrope" ], "body-md": [ "Manrope" ], "label-sm": [ "Manrope" ], "display-lg": [ "Manrope" ], "headline-md": [ "Manrope" ], "body-lg": [ "Manrope" ], "label-lg": [ "Manrope" ], "headline-lg": [ "Manrope" ], "headline-lg-mobile": [ "Manrope" ], "label-md": [ "Manrope" ], "display-lg-mobile": [ "Manrope" ] }, "fontSize": { "body-sm": [ "0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0", "fontWeight": "400" } ], "headline-sm": [ "1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "600" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "letterSpacing": "0", "fontWeight": "400" } ], "label-sm": [ "0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "700" } ], "display-lg": [ "3.5rem", { "lineHeight": "4.25rem", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "headline-md": [ "1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0", "fontWeight": "400" } ], "label-lg": [ "0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg": [ "2.25rem", { "lineHeight": "2.875rem", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" } ], "display-lg-mobile": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed top-0 bottom-0 left-0 w-64 z-50 bg-surface-container-lowest/95 backdrop-blur-md flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-md flex items-center gap-space-sm"><img alt="Cura AI Logo Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wp7YEUSpZlwXrng5WelZfyDaI0_7Qqfo5AJ5VN9-90Kcl86ZjVBTQHlaHJfKMVvNHqcDT6wKvhb8L9zjg5Ca8fL2MJGRy7RBLzgFc5Q2F_ZDCuIEsFgnivjqYTYHsIBTNNqHP8vZG2SZ-PmSFAxX0pCVg14-Qz9oEW4M5yIUKrwMr3i-xr5Gg4y6WRuX3UlnGxdGlg8A1Wv4CIO_MmYxs7G9f0WeuxZIrDaGRRlTQGLgrrh3H5a-ElteI"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold truncate">Cura AI</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide uppercase truncate">AI Health Companion</span></div></div><div class="px-space-md py-space-sm"><a class="flex items-center justify-center gap-space-sm w-full py-2.5 px-space-md rounded-full bg-primary-container text-on-primary hover:bg-primary transition-all duration-150 shadow-[0_2px_8px_rgba(88,12,31,0.2)]" data-path="new-chat" href="#"><span class="material-symbols-outlined text-[20px]">add_comment</span><span class="font-label-lg text-label-lg font-semibold">New Consultation</span></a></div><nav class="flex-1 px-space-md py-space-xs space-y-1 overflow-y-auto" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all duration-150" data-path="home" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-lg text-label-lg">Home</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all duration-150" data-path="recent-chats" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-label-lg text-label-lg">Recent Chats</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl transition-all duration-150 bg-surface-container-high text-primary font-bold" data-path="images-&amp;-reports" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span class="font-label-lg text-label-lg">Images &amp; Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all duration-150" data-path="billing-&amp;-plans" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span class="font-label-lg text-label-lg">Billing &amp; Plans</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all duration-150" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-lg text-label-lg">Settings</span></a></nav></div><div class="p-space-md bg-surface-container-low/60 flex flex-col gap-space-xs"><div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-sm min-w-0"><div class="relative flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ng8W0ZbIvgpoxXlA2-s9lBY3RTX6ntCzy5vmP03SOhuKzsVaNZI8yTtRLMcQVivzzCItibLxIIurJqEwP6aFMDJ55Or5AYK-TVwNqE9ZRKS3QfAawjO1RSJiyHRp1uYRyb6VdmyNcLKlJgcVUKAxrbnz_i0Z2d-LKgGXsfBqdbafR1X_wAIjort97XU1BpJZWi9BJinM7GzodNBmeLil8JWn9TILmCD-6xmtclFlJnoLqi7FqmGn"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Elena Rostova</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">elena.r@curahealth.ai</span></div></div><a class="p-1 text-on-surface-variant hover:text-secondary rounded-lg transition-colors" data-path="login" href="#" title="Sign Out"><span class="material-symbols-outlined text-[18px]">logout</span></a></div><div class="flex items-center justify-between px-1 pt-1"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" data-path="help-&amp;-safety" href="#">Help &amp; Safety</a><div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold"><span class="material-symbols-outlined text-[14px]">verified_user</span><span>HIPAA Encrypted</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed"><span class="material-symbols-outlined text-[16px] text-secondary">lock</span><span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">End-to-End Encrypted • HIPAA Compliant</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-2 text-on-surface-variant hover:text-on-surface transition-colors rounded-full hover:bg-surface-container-high" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></span></button><a class="hidden sm:inline-flex items-center gap-space-xs px-4 py-2 rounded-full bg-primary-container text-on-primary hover:bg-primary transition-all font-label-md text-label-md font-semibold" data-path="new-chat" href="#"><span class="material-symbols-outlined text-[18px]">add</span>Quick Consult</a><div class="flex items-center gap-space-sm pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ng8W0ZbIvgpoxXlA2-s9lBY3RTX6ntCzy5vmP03SOhuKzsVaNZI8yTtRLMcQVivzzCItibLxIIurJqEwP6aFMDJ55Or5AYK-TVwNqE9ZRKS3QfAawjO1RSJiyHRp1uYRyb6VdmyNcLKlJgcVUKAxrbnz_i0Z2d-LKgGXsfBqdbafR1X_wAIjort97XU1BpJZWi9BJinM7GzodNBmeLil8JWn9TILmCD-6xmtclFlJnoLqi7FqmGn"/></div></div></header><main class="flex-1 pt-16 w-full px-space-lg bg-surface"><div class="flex flex-col w-full pb-16">
+<!-- Privacy Shield & Vault Micro-Banner -->
+<div class="mb-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold tracking-tight">Zero-Knowledge Health Vault</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Uploaded files are encrypted client-side with AES-256 before clinical ingestion.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">HIPAA Certified Partition #419</span>
+</div>
+</div>
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider uppercase">Diagnostic Ingestion Pipeline</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">v4.8 Multi-Modal Engine</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Medical Images &amp; Lab Reports</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        HIPAA-grade multi-modal upload for DICOM scans, pathology reports, blood tests, and radiology summaries.
+      </p>
+</div>
+<!-- Storage / Capacity Gauge Mini-Metric -->
+<div class="flex items-center gap-space-md p-space-sm pl-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Vault Capacity</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">142.8 MB / 5.0 GB</span>
+</div>
+<div class="relative w-11 h-11 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="18, 100" stroke-linecap="round" stroke-width="3.2"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm text-primary font-bold">3%</span>
+</div>
+</div>
+</div>
+<!-- Primary Upload Drag & Drop Area -->
+<section class="mb-space-xl">
+<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low transition-all duration-300 hover:bg-surface-container-high/60 shadow-sm p-space-xl text-center" id="drop-zone">
+<!-- Decorative radial ambient blur behind icon -->
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center max-w-xl mx-auto space-y-space-md">
+<div class="w-20 h-20 rounded-2xl bg-surface-container-lowest shadow-md flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-[40px] text-secondary">cloud_upload</span>
+</div>
+<div class="space-y-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">
+            Drag and drop your medical reports here, or browse files
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Seamless parsing of lab panels, pathology slides, MRI/CT volume slices, and echocardiograms.
+          </p>
+</div>
+<div class="inline-flex items-center gap-space-xs px-4 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant shadow-sm font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">task_alt</span>
+<span>Supported formats: PDF, DICOM (.dcm), JPG, PNG, TIFF • Max 50MB per file</span>
+</div>
+<div class="pt-space-xs flex flex-wrap items-center justify-center gap-space-sm">
+<button class="inline-flex items-center gap-space-xs px-6 py-3 rounded-full bg-primary-container text-on-primary hover:bg-primary transition-all duration-150 font-label-lg text-label-lg font-semibold shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+            Select Medical Document
+          </button>
+<button class="inline-flex items-center gap-space-xs px-5 py-3 rounded-full bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-all duration-150 font-label-lg text-label-lg font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">devices</span>
+            PACS / EHR Integration
+          </button>
+</div>
+</div>
+<!-- Quick Drag Indicator Overlay -->
+<div class="hidden absolute inset-0 bg-primary/10 backdrop-blur-sm flex items-center justify-center" id="drop-active">
+<div class="px-6 py-3 rounded-full bg-surface-container-lowest text-primary font-label-lg text-label-lg font-bold shadow-xl animate-bounce">
+          Release to securely upload file
+        </div>
+</div>
+</div>
+</section>
+<!-- Filter & Tab Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md mb-space-md">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 sm:pb-0">
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm">
+        All Documents (14)
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold whitespace-nowrap transition-colors shadow-sm">
+        DICOM &amp; Radiology (6)
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold whitespace-nowrap transition-colors shadow-sm">
+        Blood &amp; Biomarkers (5)
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold whitespace-nowrap transition-colors shadow-sm">
+        Pathology (3)
+      </button>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-9 pr-4 py-2 rounded-full bg-surface-container-lowest text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none shadow-sm" placeholder="Search by clinical findings..." type="text"/>
+</div>
+<button class="p-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-primary transition-colors shadow-sm" title="Filter attributes">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Main Content Grid: File Feed (Left 8 cols) + Instant Biomarker Inspector (Right 4 cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Uploaded File List & Analysis Status (8 cols) -->
+<div class="lg:col-span-8 space-y-space-md">
+<!-- Card 4: Echocardiogram_Doppler_Results.pdf (In Progress) -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm transition-all duration-200 hover:shadow-md">
+<div class="absolute top-0 left-0 right-0 h-1 bg-surface-container-high">
+<div class="h-full bg-secondary w-2/3 transition-all duration-500 animate-pulse"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/40 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">monitor_heart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-primary font-bold truncate">Echocardiogram_Doppler_Results.pdf</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+                  In Review • 68%
+                </span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>PDF Format</span>
+<span>•</span>
+<span>4.8 MB</span>
+<span>•</span>
+<span class="text-secondary font-semibold">Uploaded just now</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">Running neural edge-contrast pass...</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-md bg-surface-container-low/50 -mx-space-lg -mb-space-lg p-space-md px-space-lg flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] animate-spin text-secondary">progress_activity</span>
+<span>Parsing Left Ventricular Ejection Fraction (LVEF)...</span>
+</div>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" type="button">Cancel Parse</button>
+</div>
+</div>
+<!-- Card 1: LabCorp_CompleteMetabolicPanel_Oct2024.pdf (Analyzed, Selected for preview) -->
+<div class="relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm transition-all duration-200 hover:shadow-md cursor-pointer ring-2 ring-primary/10">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">lab_profile</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-primary font-bold truncate">LabCorp_CompleteMetabolicPanel_Oct2024.pdf</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+                  Analysis Complete
+                </span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Serology Panel</span>
+<span>•</span>
+<span>2.4 MB</span>
+<span>•</span>
+<span>Uploaded Oct 22, 2024</span>
+</div>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex-shrink-0" type="button">
+<span>View Synthesis</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="mt-space-md flex flex-wrap items-center gap-2">
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-semibold text-secondary">3 elevated biomarkers identified</span>
+</div>
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            Fasting Glucose: 114 mg/dL
+          </div>
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            HbA1c: 5.9% (Pre-diabetic threshold)
+          </div>
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            eGFR: 88 mL/min (Optimal)
+          </div>
+</div>
+</div>
+<!-- Card 2: Lumbar_Spine_MRI_Sagittal_T2.dcm (DICOM Scan) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm transition-all duration-200 hover:shadow-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/30 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">radiology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-primary font-bold truncate">Lumbar_Spine_MRI_Sagittal_T2.dcm</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+                  Analysis Complete
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                  128 Slices
+                </span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>DICOM 3.0 Standard</span>
+<span>•</span>
+<span>28.5 MB</span>
+<span>•</span>
+<span>Uploaded Oct 19, 2024</span>
+</div>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">view_in_ar</span>
+<span>View 3D Report</span>
+</button>
+</div>
+<div class="mt-space-md flex flex-wrap items-center gap-2">
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">warning</span>
+<span class="font-semibold text-primary">Segmented disc protrusion at L4-L5</span>
+</div>
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            Moderate thecal sac impingement
+          </div>
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            Neuroforaminal patency preserved
+          </div>
+</div>
+</div>
+<!-- Card 3: DEXA_BodyComposition_Scan_Report.pdf (Archived) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm transition-all duration-200 hover:shadow-md opacity-90 hover:opacity-100">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">density_medium</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-primary font-bold truncate">DEXA_BodyComposition_Scan_Report.pdf</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                  Archived
+                </span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span>Densitometry / DEXA</span>
+<span>•</span>
+<span>1.1 MB</span>
+<span>•</span>
+<span>Uploaded Oct 15, 2024</span>
+</div>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex-shrink-0" type="button">
+<span>View Synthesis</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<div class="mt-space-md flex flex-wrap items-center gap-2">
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            T-Score: -0.4 (Normal BMD)
+          </div>
+<div class="px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+            Visceral adipose index within healthy range (112 cm²)
+          </div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Diagnostic Preview & Extraction Drawer (4 cols) -->
+<div class="lg:col-span-4 space-y-space-md">
+<!-- Primary Preview Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">document_scanner</span>
+<h3 class="font-label-lg text-label-lg text-primary font-bold uppercase tracking-wider">Report Inspector</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-bold">
+            99.4% AI Match
+          </span>
+</div>
+<!-- Document Preview Thumbnail with Highlighting Visual -->
+<div class="relative w-full h-48 rounded-xl overflow-hidden bg-surface-container-low shadow-inner mb-space-md group">
+<img class="w-full h-full object-cover object-top opacity-85 group-hover:scale-105 transition-transform duration-500" data-alt="High-resolution clinical preview of an authentic laboratory metabolic blood panel report sheet with delicate highlighted sections over clinical bio-metrics, photographed in clean diagnostic studio lighting with soft burgundy highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkXcFwxe7i5qsc4oCOP2P8J2rjV7Z5RCcW8KNvQXJA9C1Yj8iVJTaKLh4H1vHLTLxKmA3T6Rb4L33Y8QO2xiDhKwMXYv8B1aQjmkeKIALFQu1WJOw3fjWuhGQPe-S7BC_ifVRgvHOvJWXOlksuqpecp9R2oqi7j454dkJiiJJOvJH_w2simVkpE_XOYjF6DExw4olE9eOqsyBmdApVjOBO1Qj6PKU6jyULsZsVF3pGJb1euGmDCOwS"/>
+<!-- Highlight Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-space-md text-on-primary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider opacity-80">Active Document Reference</span>
+<span class="font-label-lg text-label-lg font-bold truncate">CMP-80029-A_LabCorp_Page1.pdf</span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+            Page 1 of 3
+          </div>
+</div>
+<!-- Extracted Biomarkers Stack -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider px-1">
+<span>Biomarker</span>
+<span>Value &amp; Status</span>
+</div>
+<!-- Fasting Glucose -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary font-bold">Fasting Glucose</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">114 mg/dL</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Standard: 70–99 mg/dL</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/40 text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">Elevated</span>
+</div>
+<!-- Mini Spark Indicator -->
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest mt-2 overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Hemoglobin A1c -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary font-bold">Hemoglobin A1c (HbA1c)</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">5.9%</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Standard: &lt; 5.7%</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/40 text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">Pre-Diabetic</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest mt-2 overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<!-- eGFR -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary font-bold">eGFR (Kidney Function)</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">88 mL/min</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Standard: &gt; 60 mL/min</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">Optimal</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest mt-2 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- ALT (Alanine Aminotransferase) -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg text-primary font-bold">ALT (Liver Enzyme)</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">44 IU/L</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Standard: 7–35 IU/L</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/40 text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">Mild High</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest mt-2 overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+<!-- Action Trigger inside Drawer -->
+<div class="mt-space-md pt-space-md flex flex-col gap-space-xs">
+<a class="w-full py-2.5 px-space-md rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-semibold text-center transition-all duration-150 shadow-sm flex items-center justify-center gap-2" data-path="new-chat" href="#">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span>Ask Cura AI About These Findings</span>
+</a>
+<button class="w-full py-2 px-space-md rounded-full bg-transparent hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold transition-colors text-center" type="button">
+            Export Clinical PDF Summary
+          </button>
+</div>
+</div>
+<!-- PACS & Radiology Slice Quick-Viewer Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">animation</span>
+<h3 class="font-label-lg text-label-lg text-primary font-bold uppercase tracking-wider">DICOM Volumetric Slices</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sagittal T2</span>
+</div>
+<div class="relative rounded-xl overflow-hidden bg-inverse-surface aspect-video flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-90" data-alt="High contrast medical DICOM MRI slice of human lumbar spine in sagittal orientation, showing vertebrae and spinal disc structures with delicate computer-aided radiology markup contours in subdued crimson tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkk95uxf9CwwrFMU9bnXMtxyb_RHrYntSvWDktgPEs7BcjHLuldhmktLjZqrI1_eOubGTUGemnhf6wxP-35DuI7XXels0Ch3BPDnePg5aSYlksCP8ayz38dd76ul4oMvTauH0fhf29EeGgUQeUNLa9mYJul7S9VHt9H9HdxW2G3_uhYQavYYgfEB01w6rgRdRJv3Z4VsKdYfZxIyF3KUEf_J6PgOsbtTT7b26gMWSIIZDSNZsfpAh3"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-on-primary text-[10px] font-mono">
+            Slice 48/128 • 1.5T GE Signa
+          </div>
+<div class="absolute top-2 right-2 flex items-center gap-1">
+<button class="w-6 h-6 rounded bg-inverse-surface/80 text-on-primary flex items-center justify-center hover:bg-inverse-surface" title="Contrast adjustment">
+<span class="material-symbols-outlined text-[14px]">contrast</span>
+</button>
+<button class="w-6 h-6 rounded bg-inverse-surface/80 text-on-primary flex items-center justify-center hover:bg-inverse-surface" title="Measure">
+<span class="material-symbols-outlined text-[14px]">straighten</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+          Cura AI segmented focal canal narrowing of 3.2mm at lumbar level L4-L5 with 99.1% boundary precision.
+        </p>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Drag-and-Drop UX Micro-Script -->
+<script>
+    (function() {
+      const dropZone = document.getElementById('drop-zone');
+      const dropActive = document.getElementById('drop-active');
+
+      if (!dropZone || !dropActive) return;
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropActive.classList.remove('hidden');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropActive.classList.add('hidden');
+        }, false);
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        const files = e.dataTransfer.files;
+        if (files && files.length > 0) {
+          alert('Securely received ' + files.length + ' file(s). Encrypting with AES-256 for clinical ingestion...');
+        }
+      });
+    })();
+  </script>
+</div></main></div></body></html>
